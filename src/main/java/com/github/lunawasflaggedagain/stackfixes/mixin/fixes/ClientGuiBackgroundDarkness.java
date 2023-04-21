@@ -1,5 +1,5 @@
 package com.github.lunawasflaggedagain.stackfixes.mixin.fixes;
 
-@Mixin()
+//@Mixin()
 public class ClientGuiBackgroundDarkness {
 }
