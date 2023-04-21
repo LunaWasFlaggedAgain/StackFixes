@@ -1,0 +1,48 @@
+plugins {
+	alias libs.plugins.quilt.loom
+	alias libs.plugins.ploceus
+}
+
+archivesBaseName = project.archives_base_name
+version = project.version
+group = project.maven_group
+
+repositories {
+	maven {
+		name = 'Maven Central'
+		url = 'https://repo1.maven.org/maven2'
+	}
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/stackfixes.accessWidener")
+}
+
+dependencies {
+	minecraft libs.minecraft
+	mappings loom.layered {
+		mappings variantOf(libs.feather.mappings) { classifier 'v2' }
+		ploceus.nestedMappings(it)
+	}
+	nests libs.nests
+
+	modImplementation libs.quilt.loader
+}
+
+processResources {
+	inputs.property 'version', version
+
+	filesMatching('quilt.mod.json') {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.encoding = 'UTF-8'
+	it.options.release = 8
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+}

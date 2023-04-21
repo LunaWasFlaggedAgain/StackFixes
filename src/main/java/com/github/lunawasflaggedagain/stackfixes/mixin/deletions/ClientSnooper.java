@@ -1,0 +1,35 @@
+package com.github.lunawasflaggedagain.stackfixes.mixin.deletions;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.snooper.Snooper;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+@Mixin(Minecraft.class)
+public class ClientSnooper {
+	@Shadow
+	private Snooper snooper = null;
+
+	@Redirect(method = "runGame()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/snooper/Snooper;addCpuInfo()V"))
+	public void stackFixes$addCpuInfo(Snooper snooper) {}
+
+	@Redirect(method = "runGame()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/snooper/Snooper;isActive()Z"))
+	public boolean stackFixes$isActive(Snooper snooper) { return true; } // Returning true here prevents the call to startSnooping
+
+	@Inject(method = "addSnooperInfo(Lnet/minecraft/util/snooper/Snooper;)V", at = @At("HEAD"), cancellable = true)
+	public void stackFixes$addSnooperInfo(CallbackInfo ci) { ci.cancel(); }
+
+	@Inject(method = "addSnooper(Lnet/minecraft/util/snooper/Snooper;)V", at = @At("HEAD"), cancellable = true)
+	public void stackFixes$addSnooper(CallbackInfo ci) { ci.cancel(); }
+
+	@Inject(method = "isSnooperEnabled", at = @At("HEAD"), cancellable = true)
+	public void stackFixes$isSnooperEnabled(CallbackInfoReturnable<Boolean> ci) { ci.setReturnValue(false); }
+
+	@Inject(method = "getSnooper", at = @At("HEAD"), cancellable = true)
+	public void stackFixes$getSnooper(CallbackInfoReturnable<Snooper> ci) { ci.setReturnValue(null); }
+}

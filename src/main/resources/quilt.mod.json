@@ -1,0 +1,27 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "com.github.lunawasflaggedagain",
+		"id": "stackfixes",
+		"version": "${version}",
+		"metadata": {
+			"name": "Stack Fixes",
+			"description": "General fixes for 1.6.4"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.18.1-"
+			},
+			{
+				"id": "minecraft",
+				"versions": "1.6.4"
+			}
+		]
+	},
+	"access_widener": [
+		"stackfixes.accessWidener"
+	],
+	"mixin": "stackfixes.mixins.json"
+}
