@@ -12,7 +12,7 @@ import java.util.List;
 public class ClientSnooperButton {
 	@Redirect(method = "init()V", at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z"))
 	public boolean stackFixes$add(List<Object> list, Object object) {
-		if (((ButtonWidget)object).id == 104) return true;
+		if (((ButtonWidget) object).id == 104) return true;
 		return list.add(object);
 	}
 

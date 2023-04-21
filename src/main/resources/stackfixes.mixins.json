@@ -4,7 +4,8 @@
   "package": "com.github.lunawasflaggedagain.stackfixes.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "deletions.Snooper"
+    "deletions.Snooper",
+    "deletions.SnooperClearer"
   ],
   "client": [
     "deletions.ClientReservedCrashMemory",
