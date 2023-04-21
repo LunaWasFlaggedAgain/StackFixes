@@ -15,9 +15,7 @@ public abstract class ClientReservedCrashMemory implements Snoopable {
 	public static byte[] MEMORY_RESERVED_FOR_CRASH = null;
 
 	@Redirect(method = "cleanHeap", at = @At(value = "INVOKE", target = "Ljava/lang/System;gc()V"))
-	public void stackFixes$cleanHeap$gc() {
-		//
-	}
+	public void stackFixes$cleanHeap$gc() {}
 
 	@Inject(method = "cleanHeap", at = @At(value = "FIELD", target = "Lnet/minecraft/client/Minecraft;MEMORY_RESERVED_FOR_CRASH:[B"))
 	public void stackFixes$cleanHeap$PUTSTATIC(CallbackInfo ci) {
