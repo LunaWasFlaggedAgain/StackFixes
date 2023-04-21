@@ -11,7 +11,8 @@
     "deletions.ClientReservedCrashMemory",
     "deletions.ClientSnooper",
     "deletions.ClientSnooperButton",
-    "deletions.ClientTimerHackRemover",
+    "deletions.ClientTimerHack",
+    "fixes.ClientGuiBackgroundDarkness",
     "fixes.ClientLinkConfirmCenter"
   ],
   "injectors": {

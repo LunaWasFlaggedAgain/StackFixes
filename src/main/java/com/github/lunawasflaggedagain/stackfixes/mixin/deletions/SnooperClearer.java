@@ -16,6 +16,7 @@ public class SnooperClearer {
 	@Shadow
 	@Final
 	private final Timer snooperTimer = null;
+	@SuppressWarnings("rawtypes")
 	@Shadow
 	private Map snoopedDataMap = null;
 	@Shadow
