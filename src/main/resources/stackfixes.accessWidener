@@ -1,5 +1,0 @@
-accessWidener v1 named
-
-accessible field net/minecraft/client/gui/screen/ConfirmScreen confirmText Ljava/lang/String;
-accessible field net/minecraft/client/gui/screen/ConfirmChatLinkScreen copy Ljava/lang/String;
-accessible field net/minecraft/client/gui/screen/ConfirmScreen abortText Ljava/lang/String;

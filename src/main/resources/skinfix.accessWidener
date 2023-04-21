@@ -1,0 +1,3 @@
+accessWidener v1 named
+
+accessible method net/minecraft/client/entity/living/player/ClientPlayerEntity registerTexture (Lnet/minecraft/resource/Identifier;Ljava/lang/String;Lnet/minecraft/resource/Identifier;Lnet/minecraft/client/render/BufferedImageSkinProvider;)Lnet/minecraft/client/texture/PlayerSkinTexture;

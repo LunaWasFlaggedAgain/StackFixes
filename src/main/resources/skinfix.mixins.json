@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.github.allinkdev.skinfix.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "ClientPlayerEntityAccessor",
+    "ClientPlayerEntityMixin",
+    "MinecraftMixin",
+    "TextureManagerAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

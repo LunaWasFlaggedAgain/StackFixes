@@ -15,7 +15,7 @@ repositories {
 }
 
 loom {
-	accessWidenerPath = file("src/main/resources/stackfixes.accessWidener")
+	accessWidenerPath = file("src/main/resources/skinfix.accessWidener")
 }
 
 dependencies {

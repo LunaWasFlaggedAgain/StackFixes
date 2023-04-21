@@ -8,6 +8,8 @@
     "deletions.SnooperClearer"
   ],
   "client": [
+    "accessor.ConfirmChatLinkScreenAccessor",
+    "accessor.ConfirmScreenAccessor",
     "deletions.ClientRealmsServer",
     "deletions.ClientReservedCrashMemory",
     "deletions.ClientSnooper",

@@ -20,8 +20,9 @@
 			}
 		]
 	},
-	"access_widener": [
-		"stackfixes.accessWidener"
-	],
-	"mixin": "stackfixes.mixins.json"
+	"access_widener": "skinfix.accessWidener",
+	"mixin": [
+		"stackfixes.mixins.json",
+		"skinfix.mixins.json"
+	]
 }
