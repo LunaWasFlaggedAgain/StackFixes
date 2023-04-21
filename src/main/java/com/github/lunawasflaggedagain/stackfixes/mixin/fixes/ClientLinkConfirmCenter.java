@@ -18,7 +18,7 @@ public abstract class ClientLinkConfirmCenter extends ConfirmScreen {
 
 	@SuppressWarnings("unchecked")
 	@Inject(method = "init()V", at = @At("HEAD"), cancellable = true)
-	public void stackFixes$cleanHeap(CallbackInfo ci) {
+	public void stackFixes$init(CallbackInfo ci) {
 		ConfirmChatLinkScreen screen = ((ConfirmChatLinkScreen) (Object) this);
 		ConfirmChatLinkScreenAccessor accessor = (ConfirmChatLinkScreenAccessor) screen;
 
