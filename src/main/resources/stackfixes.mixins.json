@@ -10,9 +10,10 @@
     "deletions.ClientReservedCrashMemory",
     "deletions.ClientSnooper",
     "deletions.ClientSnooperButton",
+    "deletions.ClientTimerHackRemover",
     "fixes.ClientLinkConfirmCenter"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  }
 }
