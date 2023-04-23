@@ -16,7 +16,8 @@
     "deletions.ClientSnooperButton",
     "deletions.ClientTimerHack",
     "fixes.ClientGuiBackgroundDarkness",
-    "fixes.ClientLinkConfirmCenter"
+    "fixes.ClientLinkConfirmCenter",
+    "load.Preload"
   ],
   "injectors": {
     "defaultRequire": 1
